@@ -4,9 +4,9 @@ import "./component.scss";
 const signup =()=>{
     return (
 
-<section class="h-80">
+<section class="h-100">
   <div  class="container py-5 h-80">
-    <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="row d-flex justify-content-center align-items-center h-60">
       <div id="register-bg" class="col">
         <div class="card card-registration my-4">
           <div  class="row g-0">
@@ -19,7 +19,7 @@ const signup =()=>{
             <div  class="col-xl-6">
            
               <div  class="card-body p-md-5 text-dark">
-                <h3 class="mb-5 text-uppercase">Student registration form</h3>
+                <h3 class="mb-5 text-uppercase">Register To Continue</h3>
 
                 <div class="row">
                   <div class="col-md-6 mb-4">
@@ -68,7 +68,7 @@ const signup =()=>{
                 <div class="row">
                   <div class="col-md-6 mb-4">
 
-                    <select class="select">
+                    <select id="selector" class="select">
                       <option value="1">State</option>
                       <option value="2">Option 1</option>
                       <option value="3">Option 2</option>
@@ -78,7 +78,7 @@ const signup =()=>{
                   </div>
                   <div class="col-md-6 mb-4">
 
-                    <select class="select">
+                    <select id="selector" class="select">
                       <option value="1">City</option>
                       <option value="2">Option 1</option>
                       <option value="3">Option 2</option>

@@ -12,7 +12,7 @@ return (
   
      <>
      <Navbar/>
-    
+       
       <Footer />
       </>
  

@@ -14,7 +14,7 @@ root.render(
     {/* <Navbar/> */}
     <div class='imge imge-content'>
       <div class='content'>
-    <App />
+       <App />
     </div>
     </div>
       {/* <Component {...pageProps} /> */}

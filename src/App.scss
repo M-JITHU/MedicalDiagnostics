@@ -4,32 +4,24 @@ $body-bg: #000;
 
 // Import Bootstrap and its default variables
 @import '~bootstrap/scss/bootstrap.scss';
-.App {
-  text-align: center;
-  /* background-image: url('./logo512.png'); */
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
-.App-header {
- 
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: black;
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
+
+  // font-size: calc(10px + 2vmin);
+ 
 .nav-head2
 {
   min-height: 10vh;
@@ -50,14 +42,46 @@ $body-bg: #000;
   
    
 }
-.nav-head2 ul li{
+.nav-head2 ul{
   display: flex;
   flex-direction:row;
+  align-items: flex-start;
+  // align-items: flex-start;
+  justify-content:space-between;
   text-decoration: none;
   list-style: none;
+  cursor: pointer; 
+  
+}
+.nav-head2 ul li{
+  // display: flex;
+  // flex-direction:row;
+  // text-decoration: none;
+  // list-style: none;
   margin-top: 22px;
-  margin-left: 1px;
-  list-style: none;
+  // margin-left: 1px;
+}
+.nav-head2 ul li div
+{
+  border-radius: 10px;
+  // background-color: rgb(217, 215, 215);
+  margin-left: 20px;
+}
+.nav-head2 ul li div input
+{
+  border: none;
+  opacity: 0.7;
+  padding:1px;
+  border-radius: 10px;
+  
+}
+.nav-head2 ul li div input::after
+{
+  // border: none;
+  border-top-style: hidden;
+        border-right-style: hidden;
+        border-left-style: hidden;
+        border-bottom-style: groove;
 }
 
 .nav-head
@@ -72,14 +96,7 @@ $body-bg: #000;
   // align-items:center;
   justify-content:center;
   font-size: calc(5px + 2vmin); 
-  
-  //  border-bottom:solid rgba(75,217,244); 
    margin-bottom: 20px;
-  //  border-bottom-style: double;
-  //  padding-bottom: 1em;
-  //  border-bottom:  solid #00acb1 ;
-  //  border-bottom-width: 50%;
-  /* border-radius: 5px; */
   margin: 0em 2em;
   
 }
@@ -95,12 +112,8 @@ $body-bg: #000;
   
 }
 .nav-head ul li:hover{
-  // margin-left: 10px;
-  // color: #61dafb;
+ 
   opacity: 0.5;
-
-  /* text-decoration: none;
-  list-style: none; */
 }
 .nav-head ul li a:hover
 {
@@ -111,18 +124,8 @@ $body-bg: #000;
   text-decoration: none;
   color:#00acb1 ;
 }
-// .App-link {
-//   color: #61dafb;
-// }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
 
 
 // .nav-end
@@ -445,4 +448,9 @@ text-align: center;
   letter-spacing: -0.10vw;
   position: relative;
   margin-right: 20px;
+}
+.dark
+{
+  background:rgb(17 28 68 ) !important;
+  color: #ffffff;
 }

@@ -1,6 +1,13 @@
 // import logo from './logo.svg';
 import './App.scss';
-import React,{Component} from 'react';
+import React,{useState} from 'react';
+import { RiMoonFill, RiSunFill } from "react-icons/ri";
+import {
+  IoMdNotificationsOutline,
+  IoMdInformationCircleOutline,
+} from "react-icons/io";
+import { FiSearch } from "react-icons/fi";
+import { FiAlignJustify } from "react-icons/fi";
 import {
 	BrowserRouter as Router,
 	Routes,
@@ -16,21 +23,45 @@ import Signup from './components/signup';
 import logo from './logo.png';
 
 
-function navbar() {
+function Navbar() {
+  const [darkmode, setDarkmode] = useState(false);
   return (
     <Router>
     <nav className='nav-head2'>
             <ul>
               <li><img src={logo} width='200px'></img></li>
-             
+             <li><div><FiSearch/>
+             <input
+            type="text"
+            placeholder="Search..."
+            /></div></li>
+             <li>
+             <div
+          onClick={() => {
+            if (darkmode) {
+              document.body.classList.remove("dark");
+              setDarkmode(false);
+            } else {
+              document.body.classList.add("dark");
+              setDarkmode(true);
+            }
+          }}
+        >
+          {darkmode ? (
+            <RiSunFill className="text-light" />
+          ) : (
+            <RiMoonFill className=" dark:text-white" />
+          )}
+        </div>
+        </li>
             </ul>
             <div className='nav-end'>
           <div class="nav-section nav-des-section">
           {/* <div class="nav-des-sub">DEPARTMENT OF UNDERGRADUATE COURSES</div>
           <div class="nav-des-sub"></div>  */}
           <div class="op-end">
-            <button type="button" class="nav-op btn me-4 justify-content-md-end"><Link to="login">Login</Link></button>
-            <button type="button" class="nav-op btn"><Link to="register">Sign-Up</Link></button>
+          <Link to="login"><button type="button" class="nav-op btn me-4 justify-content-md-end">Login</button></Link>
+          <Link to="register"> <button type="button" class="nav-op btn">Sign-Up</button></Link>
           </div>
       </div>
        </div>
@@ -69,4 +100,4 @@ function navbar() {
   );
 }
 
-export default navbar;
+export default Navbar;

@@ -30,13 +30,22 @@ function Navbar() {
     <nav className='nav-head2'>
             <ul>
               <li><img src={logo} width='200px'></img></li>
-             <li><div><FiSearch/>
+             <li></li>
+             <li>
+            
+        </li>
+            </ul>
+            <div className='nav-end'>
+          <div class="nav-section nav-des-section">
+          {/* <div class="nav-des-sub">DEPARTMENT OF UNDERGRADUATE COURSES</div>
+          <div class="nav-des-sub"></div>  */}
+          <div class="op-end">
+          <div class="me-4"><FiSearch class="me-1"/>
              <input
             type="text"
             placeholder="Search..."
-            /></div></li>
-             <li>
-             <div
+            /></div>
+          <div class="me-4"
           onClick={() => {
             if (darkmode) {
               document.body.classList.remove("dark");
@@ -53,13 +62,6 @@ function Navbar() {
             <RiMoonFill className=" dark:text-white" />
           )}
         </div>
-        </li>
-            </ul>
-            <div className='nav-end'>
-          <div class="nav-section nav-des-section">
-          {/* <div class="nav-des-sub">DEPARTMENT OF UNDERGRADUATE COURSES</div>
-          <div class="nav-des-sub"></div>  */}
-          <div class="op-end">
           <Link to="login"><button type="button" class="nav-op btn me-4 justify-content-md-end">Login</button></Link>
           <Link to="register"> <button type="button" class="nav-op btn">Sign-Up</button></Link>
           </div>

@@ -37,7 +37,7 @@ const signup =()=>{
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="text" id="form3Example8" class="form-control form-control-lg" />
+                  <input type="text" id="form3Example8" class="form-control form-control-lg"  />
                   <label class="form-label" for="form3Example8">Address</label>
                 </div>
 

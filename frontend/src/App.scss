@@ -31,14 +31,18 @@ $body-bg: #000;
   align-items:flex-start;
   justify-content: space-between;
   font-size: calc(5px + 2vmin); 
-  
+  // position: fixed;
   //  border-bottom:solid rgba(75,217,244); 
   //  margin-bottom: 20px;
-   border-bottom-style: double;
-   padding-bottom: 1em;
-   border-bottom:  solid #00acb1 ;
-   border-bottom-width: 50%;
-   margin: 0em 2em;
+  //  border-bottom-style: double;
+  //  padding-bottom: 1em;
+  //  border-bottom:  solid #00acb1 ;
+  //  border-bottom-width: 50%;
+   margin: 0.8em 0.3em;
+   border-radius: 10px;
+  //  background-color: #817f7f;
+   -webkit-backdrop-filter: blur(3px); /* Use for Safari 9+, Edge 17+ (not a mistake) and iOS Safari 9.2+ */
+  backdrop-filter: blur(3px);
   
    
 }
@@ -83,6 +87,7 @@ $body-bg: #000;
   font-size: calc(5px + 2vmin); 
    margin-bottom: 20px;
   margin: 0em 2em;
+  margin-top: 95px;
   
 }
 .nav-head ul{
@@ -141,7 +146,11 @@ $body-bg: #000;
   color: #00acb1;
 }
 
-
+// .contain header
+// {
+//  position: relative;
+//  margin-top: 200px;
+// }
 .nav-end button:hover
 {
   /* background: rgb(15,200,230); */
@@ -464,7 +473,7 @@ text-align: center;
   color: #ffffff;
 }
 
-.girdItem4
+.Item1
 {
 
   height: 100%;
@@ -480,24 +489,26 @@ text-align: center;
   grid-area:sidebar;
   position: fixed;
 }
-.girdItem5
+.Item2
 {
   // grid-area: ;
   grid-area: header;
-  // margin-left: 100px;
+  margin-left: 100px;
+  overflow: hidden;
 }
-.girdItem6
+.Item3
 {
   // grid-area: ;
   grid-area:footer;
   margin-top:50px;
-  // margin-left: 100px;
+  margin-left: 100px;
+  overflow: hidden;
 }
   .grid-container1 {
     display: grid;
     grid-template-areas:
-      ' header header header header header'
-      ' footer footer footer footer footer';
+      ' sidebar header header header header'
+      ' sidebar footer footer footer footer';
     gap: 10px;
     padding: 10px;
   }
@@ -507,8 +518,8 @@ text-align: center;
   margin-top: 400px;
 }
 
-#sidnav
-{
-  position: fixed;
-  overflow: hidden;
-}
+// #sidnav
+// {
+//   position: fixed;
+//   overflow: hidden;
+// }

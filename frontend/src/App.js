@@ -12,10 +12,14 @@ const  App =()=> {
 return (
   
      <>
-     
-     <Navbar/>
+      {/* <div class="grid-container1">
+     <div class="Item1"><Sidebar/></div>
+     <div class="Item2"><Navbar/></div>
+     <div class="Item3"><Footer /></div>
+     </div>  */}
        
-      <Footer />
+     <Navbar/>
+     <Footer />
       </>
  
       );

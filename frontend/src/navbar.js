@@ -27,7 +27,8 @@ function Navbar() {
   const [darkmode, setDarkmode] = useState(false);
   return (
     <Router>
-    <nav className='nav-head2'>
+      <div class="contain">
+    <nav className='nav-head2  fixed-top'>
             <ul>
               <li><img src={logo} width='200px'></img></li>
              <li></li>
@@ -43,7 +44,7 @@ function Navbar() {
           <div class="me-4"><FiSearch class="me-1"/>
              <input
             type="text"
-            placeholder="Search..."
+            placeholder="Search.."
             /></div>
           <div class="me-4"
           onClick={() => {
@@ -90,7 +91,7 @@ function Navbar() {
 
     </header>
     {/* <About/> */}
-  <div>
+  <div class="">
      <Routes>
            <Route exact path='/' element={< Home />}></Route>
            <Route exact path='about' element={< About />}></Route>
@@ -98,6 +99,7 @@ function Navbar() {
            <Route exact path='login' element={<Login/>}></Route>
            <Route exact path='register' element={<Signup/>}></Route>
     </Routes>
+    </div>
     </div>
  </Router>
   );

@@ -90,7 +90,7 @@ function Navbar() {
 
     </header>
     {/* <About/> */}
-  
+  <div>
      <Routes>
            <Route exact path='/' element={< Home />}></Route>
            <Route exact path='about' element={< About />}></Route>
@@ -98,6 +98,7 @@ function Navbar() {
            <Route exact path='login' element={<Login/>}></Route>
            <Route exact path='register' element={<Signup/>}></Route>
     </Routes>
+    </div>
  </Router>
   );
 }

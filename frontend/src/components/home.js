@@ -1,6 +1,7 @@
 import React from "react";
 import './component.scss';
 import state from '../staute.jpg';
+import avatar from "../images/goku.jpg"
 // import 'bootstrap/dist/css/bootstrap.css';
 const home =()=>
 {
@@ -62,7 +63,68 @@ const home =()=>
     </button>
   </div>
 </div> */}
+<div class="grid-container">
+<div class="girdItem1"><div class="card text-bg-dark">
+  <img src={avatar} class="card-img" alt="..."/>
+  <div class="card-img-overlay">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    <p class="card-text"><small>Last updated 3 mins ago</small></p>
+  </div>
+</div></div>
 
+{/* <div class="girdItem"><div class="card mb-3" >
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src={avatar} class="img-fluid rounded-start" alt="..."/>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div></div> */}
+
+  <div class="girdItem2">
+ <div class="card mb-3">
+  <img src={avatar} class="card-img-top" alt="..."/>
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+  </div>
+</div>
+  </div>
+  <div class="girdItem3">
+  <div class="card">
+<img src={avatar} class="card-img-bottom" alt="..."/>
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+  </div>
+ 
+</div>
+  </div>
+  {/* <div class="girdItem">
+    <div class="card text-center">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+  <div class="card-footer text-muted">
+    2 days ago
+  </div>
+</div></div> */}
+
+</div>
  <br/>
   
 <div class="container1">

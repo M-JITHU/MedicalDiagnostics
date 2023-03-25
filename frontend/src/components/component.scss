@@ -120,3 +120,35 @@ h2{
   border-radius: 8px;
   padding: 5px;
 }
+
+
+.girdItem1
+{
+  // grid-area: ;
+  grid-area: header;
+}
+.girdItem2
+{
+  // grid-area: ;
+  grid-area: menu;
+}
+.girdItem3
+{
+  // grid-area: ;
+  grid-area: main;
+}
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+      'header header header header header header'
+      'menu main main main right right'
+      'menu footer footer footer footer footer';
+    gap: 10px;
+    padding: 10px;
+  }
+
+.dark{
+
+  background:rgb(10, 18, 49) !important;
+  color: #ffffff;
+}

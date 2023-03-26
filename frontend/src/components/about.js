@@ -1,58 +1,110 @@
 import React from 'react';
+import './component.scss';
 
 const Contact= ()=>{
 return (
 
-<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
-<div class="carousel-indicators">
-  <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-  <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-  <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-</div>
-<div class="carousel-inner">
-  <div class="carousel-item active">
-	<svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-
-	<div class="container">
-	  <div class="carousel-caption text-start">
-		<h1>Example headline.</h1>
-		<p>Some representative placeholder content for the first slide of the carousel.</p>
-		<p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
-	  </div>
-	</div>
-  </div>
-  <div class="carousel-item">
-	<svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-
-	<div class="container">
-	  <div class="carousel-caption">
-		<h1>Another example headline.</h1>
-		<p>Some representative placeholder content for the second slide of the carousel.</p>
-		<p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
-	  </div>
-	</div>
-  </div>
-  <div class="carousel-item">
-	<svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-
-	<div class="container">
-	  <div class="carousel-caption text-end">
-		<h1>One more for good measure.</h1>
-		<p>Some representative placeholder content for the third slide of this carousel.</p>
-		<p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
-	  </div>
-	</div>
-  </div>
-</div>
-<button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-  <span class="visually-hidden">Previous</span>
-</button>
-<button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-  <span class="visually-hidden">Next</span>
-</button>
-</div>
+	
+    <div>
+      
+    
+    <div class="py-5 ">
+      <div class="container py-5">
+        <div class="row align-items-center mb-5">
+          <div class="col-lg-6 order-2 order-lg-1"><i class="fa fa-bar-chart fa-2x mb-3 text-primary"></i>
+            <h2 class="font-weight-light">Lorem ipsum dolor sit amet</h2>
+            <p class="font-italic text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a href="#" class="btn btn-primary px-5 rounded-pill shadow-sm">Learn More</a>
+          </div>
+          <div class="col-lg-5 px-5 mx-auto order-1 order-lg-2"><img src="https://medicare.bold-themes.com/clinic/wp-content/uploads/sites/2/2015/12/doktorka.png" alt="" class="img-fluid mb-4 mb-lg-0"/></div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col-lg-5 px-5 mx-auto"><img src="https://bootstrapious.com/i/snippets/sn-about/img-2.jpg" alt="" class="img-fluid mb-4 mb-lg-0"/></div>
+          <div class="col-lg-6"><i class="fa fa-leaf fa-2x mb-3 text-primary"></i>
+            <h2 class="font-weight-light">Lorem ipsum dolor sit amet</h2>
+            <p class="font-italic text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><a href="#" class="btn btn-primary px-5 rounded-pill shadow-sm">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="">
+      <div class="container py-5">
+        <div class="row h-100 align-items-center py-5">
+          <div class="col-lg-6">
+            <h1 class="display-4">About us page</h1>
+            <p class="lead text-muted mb-0">Create a minimal about us page using Bootstrap 4.</p>
+            <p class="lead text-muted">Snippet by <a href="https://bootstrapious.com/snippets" class="text-muted"> 
+                        <u>Bootstrapious</u></a>
+            </p>
+          </div>
+          <div class="col-lg-6 d-none d-lg-block"><img src="https://bootstrapious.com/i/snippets/sn-about/illus.png" alt="" class="img-fluid"/></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="py-5">
+      <div class="container py-5">
+        <div class="row mb-4">
+          <div class="col-lg-5">
+            <h2 class="display-4 font-weight-light">Our team</h2>
+            <p class="font-italic text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+        </div>
+    
+        <div class="row text-center">
+         
+          <div class="col-xl-3 col-sm-6 mb-5 ">
+            <div class="rounded  py-5 px-4 aboutCard"><img src="https://bootstrapious.com/i/snippets/sn-about/avatar-4.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"/>
+              <h5 class="mb-0">Manuella Nevoresky</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
+              <ul class="social mb-0 list-inline mt-3">
+                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        
+          <div class="col-xl-3 col-sm-6 mb-5">
+            <div class="rounded  py-5 px-4 aboutCard"><img src="https://bootstrapious.com/i/snippets/sn-about/avatar-3.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"/>
+              <h5 class="mb-0">Samuel Hardy</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
+              <ul class="social mb-0 list-inline mt-3">
+                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        
+          <div class="col-xl-3 col-sm-6 mb-5">
+            <div class="rounded  py-5 px-4 aboutCard"><img src="https://bootstrapious.com/i/snippets/sn-about/avatar-2.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"/>
+              <h5 class="mb-0">Tom Sunderland</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
+              <ul class="social mb-0 list-inline mt-3">
+                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        
+          <div class="col-xl-3 col-sm-6 mb-5">
+            <div class="rounded  py-5 px-4 aboutCard"><img src="https://bootstrapious.com/i/snippets/sn-about/avatar-1.png" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm"/>
+              <h5 class="mb-0">John Tarly</h5><span class="small text-uppercase text-muted">CEO - Founder</span>
+              <ul class="social mb-0 list-inline mt-3">
+                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-facebook-f"></i></a></li>
+                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-twitter"></i></a></li>
+                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-instagram"></i></a></li>
+                <li class="list-inline-item"><a href="#" class="social-link"><i class="fa fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          
+    
+        </div>
+      </div>
+    </div>
+    </div>
 );
 }
 

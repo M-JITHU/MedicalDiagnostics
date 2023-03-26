@@ -126,7 +126,7 @@ const Home =()=>
       <img src={avatar} class="img-fluid rounded-start" alt="..."/>
     </div>
     <div class="col-md-8">
-      <div class="card-body text-primary">
+      <div class="bg-primary card-body text-light">
         <h5 class="card-title">Card title</h5>
         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
         <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
@@ -138,7 +138,7 @@ const Home =()=>
   <div class="girdItem2">
  <div class="card mb-3">
   <img src={dc1} class="card-img-top" alt="..."/>
-  <div class="card-body text-primary">
+  <div class="bg-primary card-body text-light">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
@@ -148,7 +148,7 @@ const Home =()=>
   <div class="girdItem3">
     <div class="card">
 <img src={dc2} class="card-img-bottom" alt="..."/>
-  <div class="card-body text-primary">
+  <div class="bg-primary card-body text-light">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
@@ -159,7 +159,7 @@ const Home =()=>
   <div class="girdItem4">
     <div class="card">
 <img src={dc3} class="card-img-bottom" alt="..."/>
-  <div class="card-body text-primary">
+  <div class="bg-primary card-body text-light">
     <h5 class="card-title">Card title</h5>
     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
@@ -172,7 +172,7 @@ const Home =()=>
   <div class="card-header">
     Featured
   </div>
-  <div class="card-body text-primary">
+  <div class="bg-primary card-body text-light">
     <h5 class="card-title">Special title treatment</h5>
     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
     <a href="#" class="btn btn-primary">Go somewhere</a>

@@ -11,7 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
- 
+  // background: #817f7f;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -170,40 +170,40 @@ background: #00acb1;
 {
   color: white;
 }
-.foot{
-  /* background-color:#282c34; */
-  background-color:#7bdcb5;
-  min-height: 5vh;
-  display: flex;
-  flex-direction:row;
-  justify-content: space-between;
-  color: rgb(6, 6, 6);
-  width: 100%;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  color: white;
-  text-align: center;
+// .foot{
+//   /* background-color:#282c34; */
+//   background-color:#7bdcb5;
+//   min-height: 5vh;
+//   display: flex;
+//   flex-direction:row;
+//   justify-content: space-between;
+//   color: rgb(6, 6, 6);
+//   width: 100%;
+//   position: fixed;
+//   left: 0;
+//   bottom: 0;
+//   width: 100%;
+//   color: white;
+//   text-align: center;
 
-}
-.foot ul{
-  display: flex;
-  flex-direction:row;
-  text-decoration: none;
-  list-style: none;
+// }
+// .foot ul{
+//   display: flex;
+//   flex-direction:row;
+//   text-decoration: none;
+//   list-style: none;
 
-}
+// }
 
-.license
-{
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 10px;
-}
-.license span{
-  margin-top: 7px;
-}
+// .license
+// {
+//   display: flex;
+//   justify-content: flex-end;
+//   margin-top: 10px;
+// }
+// .license span{
+//   margin-top: 7px;
+// }
 
 #card:not(.highlight-card):hover {
   transform: translateY(-3px);

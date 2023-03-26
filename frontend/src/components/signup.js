@@ -1,7 +1,7 @@
 import React from "react";
 import "./component.scss";
 
-const signup =()=>{
+const Signup =()=>{
     return (
 
 <section class="h-100">
@@ -124,4 +124,4 @@ const signup =()=>{
 </section>
 );
 }
-export default signup;
+export default Signup;

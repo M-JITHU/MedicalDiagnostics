@@ -3,16 +3,12 @@ import './component.scss';
 // import state from '../staute.jpg';
 import avatar from "../images/doctor.jpg"
 import medical from "../images/medical.jpg";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { Slide, Zoom, Flip, Bounce } from 'react-toastify';
 import dc1 from "../images/dc.jpg";
 import dc2 from "../images/dc2.jpg"
 import dc3 from "../images/dc3.jpg"
   import { Form } from "react-router-dom";
 // import 'bootstrap/dist/css/bootstrap.css';
-const notify = () => toast("Wow so easy!");
-const home =()=>
+const Home =()=>
 {
   
     return(
@@ -34,7 +30,7 @@ const home =()=>
           <div class="carousel-caption text-start text-primary">
             <h1>LUNG CANCER DETECTION</h1>
             <p>welcome to kle Technological University</p>
-            <p><a id="card"  class="btn" href="#" onClick={notify}>Login</a></p>
+            {/* <p><a id="card"  class="btn" href="#" onClick={notify}>Login</a></p> */}
           </div>
         </div>
       </div>
@@ -197,4 +193,4 @@ const home =()=>
 
 }
 
-export default home;
+export default Home;

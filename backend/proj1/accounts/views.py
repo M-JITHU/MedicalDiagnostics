@@ -5,15 +5,19 @@ from rest_framework.authtoken.serializers import AuthTokenSerializer
 from knox.auth import AuthToken
 from rest_framework import status
 # from .serializers import RegisterSerializer
+from knox.auth import TokenAuthentication
 from .serializers import LoginSerializer
 from django.contrib.auth import authenticate
 from .serializers import RegistrationSerializer
+from rest_framework import generics
+from rest_framework.permissions import AllowAny
 
 
 
 class LoginView(APIView):
     def post(self,request):
-        serializer = AuthTokenSerializer(data=request.data)
+        # serializer = AuthTokenSerializer(data=request.data)
+        serializer = LoginSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         
         if serializer.is_valid():
@@ -32,9 +36,26 @@ class LoginView(APIView):
                 'token':token
                 })
             else:
+                print("error 1")
                 return Response({'status': 'error', 'message': 'Invalid login credentials'})
         else:
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            
+            return Response("Error2", serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+
+
+# class LoginAPI(generics.GenericAPIView):
+#     permission_classes = (AllowAny,)
+#     authentication_classes = (TokenAuthentication,)
+#     serializer_class = LoginSerializer
+
+#     def post(self, request, *args, **kwargs):
+#         serializer = self.get_serializer(data=request.data)
+#         serializer.is_valid(raise_exception=True)
+#         user = serializer.validated_data
+#         _, token = AuthToken.objects.create(user)
+#         return Response({'token': token})
 
 
 

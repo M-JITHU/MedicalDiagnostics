@@ -1,74 +1,79 @@
-import React from "react";
+import React from 'react'
 import './component.scss';
 import { FiSearch,FiFacebook,FiTwitter,FiLinkedin } from "react-icons/fi";
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios';
 // import 'bootstrap/dist/css/bootstrap.css';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { Slide, Zoom, Flip, Bounce } from 'react-toastify';
+const Login = () => {
+
+  const [Values, setdata] = useState({
+    username: "",
+    password: "",
+  })
+  const navigate = useNavigate();
+  const setVal = (event) => {
+    // const {name,value} = e.target;
+    const name = event.target.name;
+    const value = event.target.value;
+    // event.preventDefault();
+
+    // setdata({...data,[name]:value})
+    setdata((prev) => {
+      return { ...prev, [name]: value }
+    })
+  }
 
 
-const login =()=>
-{
-  // const [Values, setdata] = useState({
-  //   usn: "",
-  //   password: "",
-  // })
-  // const navigate = useNavigate();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  // const successAlert = () => {
-  //   // window.alert("Invalid Credentials");
-  //   toast.success("User logged in successfully",{
-  //     transition:Flip
-  //   });
-  // }
 
-  // const setVal = (event) => {
-  //   // const {name,value} = e.target;
-  //   const name = event.target.name;
-  //   const value = event.target.value;
-  //   // event.preventDefault();
+    const userdata = {
+      username:Values.username,
+      password:Values.password
+    }
 
-  //   // setdata({...data,[name]:value})
-  //   setdata((prev) => {
-  //     return { ...prev, [name]: value }
-  //   })
-  // }
+    console.log(userdata);
+    console.log("user data defined")
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   // console.log(Values.usn);
-  //   // console.log(Values.password);
 
-  //   let result = await fetch('http://13.232.165.158:4000/login', {
-  //     method: "post",
-  //     body: JSON.stringify({ usn: Values.usn, password: Values.password }),
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       "Access-Control-Allow-Origin": "*",
-  //     },
-  //   });
-  //   result = await result.json();
-  //   console.log(result)
 
-  //   if (result.usn) {
-  //     localStorage.setItem("user", JSON.stringify(result));
-  //     // alert("Successfully logged in");
-  //     successAlert();
-  //     navigate('/');
+    axios.post("http://127.0.0.1:8000/api/login/", userdata)
+    
+    .then((response)=>{
+      if(userdata.username){
+        // localStorage.setItem("user", userdata.username,userdata.password);
+        localStorage.setItem("user", JSON.stringify(userdata));
+        console.log(userdata)
+        alert("logged successfully")
+        navigate('/doctor_profile')
+      }
+      console.log(response.status,response.data)})
+    // .catch((error) => console.log(error));
+    .catch(error => {
+      if (error.response) {
+        // The server responded with a status code outside of the 2xx range
+        console.log(error.response.data);
+        console.log(error.response.status);
+        console.log(error.response.headers);
+      } else if (error.request) {
+        // The request was made but no response was received
+        console.log(error.request);
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        console.log('Error', error.message);
+      }
+      console.log(error.config);
+    });
 
-  //   } else {
-  //     toast.error("Bad user credential" ,{
-  //       transition: Flip
-  //     });
-  //     alert("please enter correct details")
 
-  //   }
-  // }
-    return (
+
+
+  }
+  return (
     <>
-     <section class="vh-100">
+    <section class="vh-100">
   <div  class="container-fluid h-custom">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-md-9 col-lg-6 col-xl-5">
@@ -98,15 +103,15 @@ const login =()=>
 
        
           <div class="form-outline mb-4">
-            <input type="email" id="form3Example3" class="form-control form-control-lg"
-              placeholder="Enter a valid email address" name="usn"  />
-            <label class="form-label" for="form3Example3" >Email address</label>
+            <label class="form-label" for="form3Example3" >Username</label>
+            <input type="text" id="form3Example3" className="form-control form-control-lg"
+              placeholder="Enter a your username"  name="username" value={Values.username} onChange={setVal}   />
           </div>
 
           <div class="form-outline mb-3">
-            <input type="password" id="form3Example4" class="form-control form-control-lg"
-              placeholder="Enter password"  name="password"   />
             <label class="form-label" for="form3Example4">Password</label>
+            <input type="password" id="form3Example4" class="form-control form-control-lg"
+              placeholder="Enter password"  value={Values.password} onChange={setVal} name="password"   />
           </div>
 
           <div class="d-flex justify-content-between align-items-center">
@@ -121,10 +126,11 @@ const login =()=>
           </div>
 
           <div class="text-center text-lg-start mt-4 pt-2">
-            <button class="btn btn-primary " 
-             >login</button>
-            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href=""
-                class="link-danger">Register</a></p>
+             <button class="btn btn-primary" onClick={handleSubmit} id="lobtn"  type='button'>Login</button>
+             {/* <input type="button" className="btn btn-primary" onClick={handleSubmit} value="Login" /> */}
+            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? </p>
+            {/* <a href=""
+                class="link-danger">Register</a> */}
           </div>
 
         </form>
@@ -133,8 +139,8 @@ const login =()=>
   </div>
   
 </section>
-     </>
-    );
+    </>
+  )
 }
 
-export default login;
+export default Login;

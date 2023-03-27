@@ -4,6 +4,9 @@ import { FiSearch,FiFacebook,FiTwitter,FiLinkedin } from "react-icons/fi";
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios';
+import {FaUserCircle,FaUser} from "react-icons/fa"
+// import {MdEmail,MdDriveFileRenameOutline} from "react-icons/md"
+import {RiLockPasswordFill} from "react-icons/ri"
 // import 'bootstrap/dist/css/bootstrap.css';
 const Login = () => {
 
@@ -73,8 +76,8 @@ const Login = () => {
   }
   return (
     <>
-    <section class="vh-100">
-  <div  class="container-fluid h-custom">
+    <section class="vh-100 mt-4 mb-6">
+  <div  class="container-fluid h-custom mt-4">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-md-9 col-lg-6 col-xl-5">
         <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
@@ -103,15 +106,21 @@ const Login = () => {
 
        
           <div class="form-outline mb-4">
-            <label class="form-label" for="form3Example3" >Username</label>
+            {/* <label class="form-label" for="form3Example3" >Username</label> */}
+            <div class="d-flex flex-row">
+            <i class="fa-lg me-2  mt-2"><FaUser/></i>
             <input type="text" id="form3Example3" className="form-control form-control-lg"
               placeholder="Enter a your username"  name="username" value={Values.username} onChange={setVal}   />
+              </div>
           </div>
 
           <div class="form-outline mb-3">
-            <label class="form-label" for="form3Example4">Password</label>
+            {/* <label class="form-label" for="form3Example4">Password</label> */}
+            <div class="d-flex flex-row">
+            <i class="fa-lg me-2 mt-2"><RiLockPasswordFill/></i>
             <input type="password" id="form3Example4" class="form-control form-control-lg"
               placeholder="Enter password"  value={Values.password} onChange={setVal} name="password"   />
+              </div>
           </div>
 
           <div class="d-flex justify-content-between align-items-center">
@@ -125,12 +134,12 @@ const Login = () => {
             <a href="#!" class="text-body">Forgot password?</a>
           </div>
 
-          <div class="text-center text-lg-start mt-4 pt-2">
-             <button class="btn btn-primary" onClick={handleSubmit} id="lobtn"  type='button'>Login</button>
+          <div class="text-center text-lg-start mt-2 pt-2">
+             <button class="m-4 btn nav-op" onClick={handleSubmit} id="lobtn"  type='button'>Login</button>
              {/* <input type="button" className="btn btn-primary" onClick={handleSubmit} value="Login" /> */}
-            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? </p>
-            {/* <a href=""
-                class="link-danger">Register</a> */}
+            <p class="small fw-bold mt-2 pt-1 mb-0 me-2">Don't have an account?  
+            <a href=""
+                class="link-danger">Register</a></p>
           </div>
 
         </form>

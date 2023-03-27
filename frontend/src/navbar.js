@@ -24,6 +24,7 @@ import logo from './logo.png';
 import Doctor from './components/Doctor';
 
 
+
 function Navbar() {
   const [darkmode, setDarkmode] = useState(false);
   return (
@@ -77,10 +78,10 @@ function Navbar() {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="about">Doctors</Link>
+                <Link to="contact">Doctors</Link>
               </li>
               <li>
-                <Link to="contact">Patients</Link>
+                <Link to="about">Patients</Link>
               </li>
         <li> <Link to="contact">Services</Link></li>
         <li> <Link to="contact">About us</Link></li>

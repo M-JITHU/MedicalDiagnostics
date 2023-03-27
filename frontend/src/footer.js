@@ -1,6 +1,6 @@
 import './App.scss';
 import logo  from './logo.svg';
-
+ 
 
 const footer =()=>{
     return(
@@ -27,7 +27,7 @@ const footer =()=>{
 //   </footer>
 // </div>
 <div id="c1" class="text-center">
-<footer class="footer mt-auto  bg-body-tertiary py-4">
+<footer class="footer mt-auto mt-4  bg-body-tertiary py-4">
     <div class="row">
       <div class="col-6 col-md-2 mb-3">
         <h5>Section</h5>

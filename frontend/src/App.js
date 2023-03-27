@@ -18,8 +18,8 @@ return (
      <div class="Item3"><Footer /></div>
      </div>  */}
        
-     <Navbar/>
-     <Footer />
+       <div class="mb-4"><Navbar/></div>
+     <div class="mt-4"><Footer /></div>
       </>
  
       );

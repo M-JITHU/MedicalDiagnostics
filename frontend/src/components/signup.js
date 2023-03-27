@@ -1,120 +1,127 @@
 import React from "react";
 import "./component.scss";
+// import { FiSearch,FiFacebook,FiTwitter,FiLinkedin } from "react-icons/fi";
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios';
 
 const Signup =()=>{
+  
+  const [Values, setdata] = useState({
+    username: "",
+    password: "",
+  })
+  const navigate = useNavigate();
+
+  const setVal = (event) => {
+    // const {name,value} = e.target;
+    const name = event.target.name;
+    const value = event.target.value;
+    // event.preventDefault();
+
+    // setdata({...data,[name]:value})
+    setdata((prev) => {
+      return { ...prev, [name]: value }
+    })
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+
+    const userdata = {
+      username:Values.username,
+      password:Values.password
+    }
+
+    console.log(userdata);
+    console.log("user data defined")
+  }
+
+
     return (
 
-<section class="h-100">
-  <div  class="container py-5 h-80">
-    <div class="row d-flex justify-content-center align-items-center h-60">
-      <div id="register-bg" class="col">
-        <div class="card card-registration my-4">
-          <div  class="row g-0">
-            <div class="col-xl-6 d-none d-xl-block">
-              <img id="imge2" src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
-                alt="Sample photo" class="img-fluid"
-                />
-            </div>
-           
-            <div  class="col-xl-6">
-           
-              <div  class="card-body p-md-5 text-dark">
-                <h3 class="mb-5 text-uppercase">Register To Continue</h3>
+<section class="vh-100">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <div class="" >
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-                <div class="row">
-                  <div class="col-md-6 mb-4">
-                    <div class="form-outline">
-                      <input type="text" id="form3Example1m" class="form-control form-control-lg" />
-                      <label class="form-label" for="form3Example1m">First name</label>
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+
+                <form class="mx-1 mx-md-4">
+
+                  <div class="d-flex flex-row align-items-center mb-2">
+                    
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" id="form3Example1c" class="form-control" />
+                      <label class="form-label" for="form3Example1c">FirstName</label>
                     </div>
                   </div>
-                  <div class="col-md-6 mb-4">
-                    <div class="form-outline">
-                      <input type="text" id="form3Example1n" class="form-control form-control-lg" />
-                      <label class="form-label" for="form3Example1n">Last name</label>
+
+                  <div class="d-flex flex-row align-items-center mb-2">
+                    
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" id="form3Example1c" class="form-control" />
+                      <label class="form-label" for="form3Example1c">LastName</label>
                     </div>
                   </div>
-                </div>
 
-                <div class="form-outline mb-4">
-                  <input type="text" id="form3Example8" class="form-control form-control-lg"  />
-                  <label class="form-label" for="form3Example8">Address</label>
-                </div>
-
-                <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
-
-                  <h6 class="mb-0 me-4">Gender: </h6>
-
-                  <div class="form-check form-check-inline mb-0 me-4">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
-                      value="option1" />
-                    <label class="form-check-label" for="femaleGender">Female</label>
+                  <div class="d-flex flex-row align-items-center mb-2">
+                    
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" id="form3Example1c" class="form-control" />
+                      <label class="form-label" for="form3Example1c">UserName</label>
+                    </div>
                   </div>
 
-                  <div class="form-check form-check-inline mb-0 me-4">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
-                      value="option2" />
-                    <label class="form-check-label" for="maleGender">Male</label>
+                  <div class="d-flex flex-row align-items-center mb-2">
+                    
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="email" id="form3Example3c" class="form-control" />
+                      <label class="form-label" for="form3Example3c">Email</label>
+                    </div>
                   </div>
 
-                  <div class="form-check form-check-inline mb-0">
-                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
-                      value="option3" />
-                    <label class="form-check-label" for="otherGender">Other</label>
+                  <div class="d-flex flex-row align-items-center mb-2">
+                                  
+                                   <div class="form-outline flex-fill mb-0">
+                      <input type="password" id="form3Example4c" class="form-control" />
+                      <label class="form-label" for="form3Example4c">Password</label>
+                    </div>
                   </div>
 
-                </div>
-
-                <div class="row">
-                  <div class="col-md-6 mb-4">
-
-                    <select id="selector" class="select">
-                      <option value="1">State</option>
-                      <option value="2">Option 1</option>
-                      <option value="3">Option 2</option>
-                      <option value="4">Option 3</option>
-                    </select>
-
+                  <div class="d-flex flex-row align-items-center mb-2">
+                                
+                                <div class="form-outline flex-fill mb-0">
+                      <input type="password" id="form3Example4cd" class="form-control" />
+                      <label class="form-label" for="form3Example4cd">Repeat password </label>
+                    </div>
                   </div>
-                  <div class="col-md-6 mb-4">
 
-                    <select id="selector" class="select">
-                      <option value="1">City</option>
-                      <option value="2">Option 1</option>
-                      <option value="3">Option 2</option>
-                      <option value="4">Option 3</option>
-                    </select>
+                  {/* <div class="form-check d-flex justify-content-center mb-5">
+                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
+                    <label class="form-check-label" for="form2Example3">
+                      I agree all statements in <a href="#!">Terms of service</a>
+                    </label>
+                  </div> */}
 
+                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                    <button type="button" class="btn nav-op">Register</button>
                   </div>
-                </div>
 
-                <div class="form-outline mb-4">
-                  <input type="number" id="form3Example9" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example9">Age</label>
-                </div>
-
-                <div class="form-outline mb-4">
-                  <input type="text" id="form3Example90" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example90">Pincode</label>
-                </div>
-
-                <div class="form-outline mb-4">
-                  <input type="text" id="form3Example99" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example99">Phone</label>
-                </div>
-
-                <div class="form-outline mb-4">
-                  <input type="text" id="form3Example97" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example97">Email ID</label>
-                </div>
-
-                <div class="d-flex justify-content-end pt-3">
-                  <button type="button" class="btn btn-light">Reset all</button>
-                  <button type="button" class="btn btn-primary ms-2">Submit form</button>
-                </div>
+                </form>
 
               </div>
-           
+              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                  class="img-fluid" alt="Sample image"/>
+
+              </div>
             </div>
           </div>
         </div>

@@ -14,12 +14,12 @@ import {
 	Route,
 	Link
 } from 'react-router-dom';
-import Home from './components/home';
-import About from './components/contact';
-import Contact from './components/about';
+import Home from './components/Home';
+import About from './components/Contact';
+import Contact from './components/About';
 import App from './App';
-import Login from './components/login';
-import Signup from './components/signup';
+import Login from './components/Login';
+import Signup from './components/Signup';
 import logo from './logo.png';
 import Doctor from './components/Doctor';
 

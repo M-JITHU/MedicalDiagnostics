@@ -12,6 +12,8 @@ from .serializers import RegistrationSerializer
 from rest_framework import generics
 from rest_framework.permissions import AllowAny
 
+from accounts.serializers import PatientSerializer
+from accounts.models import Patientdb
 
 
 class LoginView(APIView):
@@ -134,3 +136,19 @@ def get_user_data(request):
 #             },
 #         'token':token
 #     })
+
+
+class PatientView(APIView):
+    def post(self, request, format=None):
+        serializer = PatientSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({'msg':'Resume Uploaded Successfully',
+            'status':'success','candidate':serializer.data},
+            status = status.HTTP_201_CREATED)
+        return Response(serializer.errors)
+    
+    def get(self, request, format=None):
+        candidates = Patientdb.objects.all()
+        serializer = PatientSerializer(candidates, many=True)
+        return Response({'status':'success','candidates':serializer.data}, status=status.HTTP_200_OK)

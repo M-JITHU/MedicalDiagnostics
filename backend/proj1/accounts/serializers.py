@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from rest_framework import serializers,validators
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
+from accounts.models import Patientdb
 
 
 class LoginSerializer(serializers.Serializer):
@@ -37,6 +38,21 @@ class RegistrationSerializer(serializers.ModelSerializer):
         user.set_password(validated_data['password'])
         user.save()
         return user
+    
+    
+    
+
+
+class PatientSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Patientdb
+        fields =  ['id','name','email','dob','state','gender','location','pimage']
+    
+    
+
+
+
+
 
     # def validate(self, data):
     #     if data['password'] != data['password2']:

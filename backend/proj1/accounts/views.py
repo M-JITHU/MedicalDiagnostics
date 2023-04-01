@@ -11,53 +11,31 @@ from django.contrib.auth import authenticate
 from .serializers import RegistrationSerializer
 from rest_framework import generics
 from rest_framework.permissions import AllowAny
+from django.contrib.auth import authenticate, login
+# from django.http import JsonResponse
+
+from knox.views import LoginView as KnoxLoginView
+from rest_framework import permissions
 
 from accounts.serializers import PatientSerializer
 from accounts.models import Patientdb
 
 
-class LoginView(APIView):
-    def post(self,request):
-        # serializer = AuthTokenSerializer(data=request.data)
-        serializer = LoginSerializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        
-        if serializer.is_valid():
-            username = serializer.validated_data['username']
-            password = serializer.validated_data['password']
-            user = authenticate(request, username=username, password=password)
-            
-            if user is not None:
-                _, token  = AuthToken.objects.create(user)
-                return Response({
-                    'user_info':{
-                    'id':user.id,
-                    'username':user.username,
-                    'email':user.email
-                    },
-                'token':token
-                })
-            else:
-                print("error 1")
-                return Response({'status': 'error', 'message': 'Invalid login credentials'})
+
+
+class LoginAPI(KnoxLoginView):
+    permission_classes = (permissions.AllowAny,)
+
+    def post(self, request, format=None):
+        username = request.data.get('username')
+        password = request.data.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return super().post(request, format=None)
         else:
-            
-            return Response("Error2", serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'error': 'Invalid username or password.'}, status=status.HTTP_400_BAD_REQUEST)
 
-
-
-
-# class LoginAPI(generics.GenericAPIView):
-#     permission_classes = (AllowAny,)
-#     authentication_classes = (TokenAuthentication,)
-#     serializer_class = LoginSerializer
-
-#     def post(self, request, *args, **kwargs):
-#         serializer = self.get_serializer(data=request.data)
-#         serializer.is_valid(raise_exception=True)
-#         user = serializer.validated_data
-#         _, token = AuthToken.objects.create(user)
-#         return Response({'token': token})
 
 
 

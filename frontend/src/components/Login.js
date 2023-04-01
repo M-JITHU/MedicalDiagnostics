@@ -14,6 +14,15 @@ const Login = () => {
     username: "",
     password: "",
   })
+
+  // const [username,setU] = useState()
+  // const [password,setP] = useState()
+
+  // username= Values.username
+  // password= Values.password
+  
+
+  const [error, setError] = useState('');
   const navigate = useNavigate();
   const setVal = (event) => {
     // const {name,value} = e.target;
@@ -27,6 +36,8 @@ const Login = () => {
     })
   }
 
+  
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -39,45 +50,76 @@ const Login = () => {
 
     console.log(userdata);
     console.log("user data defined")
-
-
-
-    axios.post("http://127.0.0.1:8000/api/login/", userdata)
+    const {username,password} = Values;
     
-    .then((response)=>{
-      if(userdata.username){
-        // localStorage.setItem("user", userdata.username,userdata.password);
-        localStorage.setItem("user", JSON.stringify(userdata));
-        console.log(userdata)
-        alert("logged successfully")
-        navigate('/doctor_profile')
-      }
-      console.log(response.status,response.data)})
-    // .catch((error) => console.log(error));
-    .catch(error => {
-      if (error.response) {
-        // The server responded with a status code outside of the 2xx range
-        console.log(error.response.data);
-        console.log(error.response.status);
-        console.log(error.response.headers);
-      } else if (error.request) {
-        // The request was made but no response was received
-        console.log(error.request);
+
+    // axios.interceptors.response.use(
+    //   (response) => {
+    //     // Return response as-is for successful requests
+    //     return response;
+    //   },
+    //   (error) => {
+    //     // Customize error handling behavior for failed requests
+    //     if (error.response.status === 400) {
+    //       // Handle 401 Unauthorized errors
+    //       console.log('Unauthorized');
+    //     } else {
+    //       // Use default error handling behavior for all other errors
+    //       return Promise.reject(error);
+    //     }
+    //   }
+    // );
+
+
+
+     try {
+      const response = await axios.post('http://127.0.0.1:8000/api/login/',{ username, password });
+      if (response.status === 200) {
+        // Login successful
+        const token = response.data.token;
+        axios.defaults.headers.common['Authorization'] = `Token ${token}`;
+        console.log(token)
+        // Store token in localStorage or session storage for later use
+        alert("logged in success")
+        navigate('doctor_profile')
       } else {
-        // Something happened in setting up the request that triggered an Error
-        console.log('Error', error.message);
+        alert("error in logged", response.status)
       }
-      console.log(error.config);
-    });
+    } catch (error) {
+      // console.log("no way", error.response.status)
+      alert("data is not correct")
+    }
+
 
 
 
 
   }
-  return (
+
+
+
+  //   try {
+  //     const response = await axios.post('http://127.0.0.1:8000/api/login/',{ userdata.username, userdata.password});
+
+  //     if (response.data.success) {
+  //       alert('Logged in successfully!');
+  //     } else {
+  //       setError(response.data.error);
+  //     }
+  //   } catch (error) {
+  //     setError('An error occurred during login.');
+  //     console.error(error);
+  //   }
+  // };
+
+
+
+
+  
+    return (
     <>
     <section class="vh-100 mt-4 mb-6">
-  <div  class="container-fluid h-custom mt-4">
+    <div  class="container-fluid h-custom mt-4">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-md-9 col-lg-6 col-xl-5">
         <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
@@ -149,7 +191,8 @@ const Login = () => {
   
 </section>
     </>
-  )
+  );
+
 }
 
 export default Login;

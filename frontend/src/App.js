@@ -19,7 +19,7 @@ return (
      </div>  */}
        
        <div class="mb-4"><Navbar/></div>
-     <div class="mt-4"><Footer /></div>
+     {/* <div class="mt-4"><Footer /></div> */}
       </>
  
       );

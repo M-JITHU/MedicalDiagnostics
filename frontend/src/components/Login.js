@@ -87,7 +87,7 @@ const Login = () => {
       }
     } catch (error) {
       // console.log("no way", error.response.status)
-      alert("data is not correct")
+      alert("Invalid Credential")
     }
 
 

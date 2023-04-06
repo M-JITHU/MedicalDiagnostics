@@ -124,7 +124,7 @@ class PatientView(APIView):
         serializer = PatientSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
-            return Response({'msg':'Resume Uploaded Successfully',
+            return Response({'msg':'Patient data Uploaded Successfully',
             'status':'success','candidate':serializer.data},
             status = status.HTTP_201_CREATED)
         return Response(serializer.errors)

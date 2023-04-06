@@ -79,8 +79,10 @@ const Login = () => {
         const token = response.data.token;
         axios.defaults.headers.common['Authorization'] = `Token ${token}`;
         console.log(token)
+        // localStorage.setItem("auth",response.data)
         // Store token in localStorage or session storage for later use
         alert("logged in success")
+
         navigate('doctor_profile')
       } else {
         alert("error in logged", response.status)
@@ -89,11 +91,6 @@ const Login = () => {
       // console.log("no way", error.response.status)
       alert("Invalid Credential")
     }
-
-
-
-
-
   }
 
 

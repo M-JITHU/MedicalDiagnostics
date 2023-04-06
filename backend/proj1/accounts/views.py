@@ -115,6 +115,9 @@ def get_user_data(request):
 #         'token':token
 #     })
 
+# def __str__(self):
+#                 return "Image classfied at {}".format(self.uploaded.strftime('%Y-%m-%d %H:%M'))
+            
 
 class PatientView(APIView):
     def post(self, request, format=None):
@@ -125,6 +128,8 @@ class PatientView(APIView):
             'status':'success','candidate':serializer.data},
             status = status.HTTP_201_CREATED)
         return Response(serializer.errors)
+    
+    
     
     def get(self, request, format=None):
         candidates = Patientdb.objects.all()

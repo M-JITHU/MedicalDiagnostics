@@ -14,6 +14,5 @@ urlpatterns = [
     path('logoutall/', knox_views.LogoutAllView.as_view()),
     path('patient/', views.PatientView.as_view(),name='patient'), # post the patient's data
     path('list/', views.PatientView.as_view(),name='list-patient')  # get the patient's data
-    
-    
+
 ]   

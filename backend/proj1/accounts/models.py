@@ -70,14 +70,14 @@ class Patientdb(models.Model):
             #print(class_names)
 
             #Reading test image
-            img_array=load_img(self.picture.path, target_size=(512,512))
+            img_array=load_img(self.pimage.path, target_size=(512,512))
 
             #Predicting
             img_array=np.expand_dims(img_array,axis=0)
             pred=model.predict(np.array(img_array))
             output_class=class_names[np.argmax(pred)]
             print("The Predicted Class is ",output_class)
-            self.classfied = str(output_class)
+            self.classified = str(output_class)
             print("success")
 
         except Exception as e:

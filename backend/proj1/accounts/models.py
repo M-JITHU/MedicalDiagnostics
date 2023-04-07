@@ -1,11 +1,15 @@
 from django.db import models
 
-from keras_preprocessing.image import load_img, img_to_array
+from keras_preprocessing.image import load_img
 # from tensorflow.keras.preprocessing.image import load_img
 # Create your models here.
-
+import os
+import cv2
 import numpy as np
-from tensorflow.keras.applications.inception_resnet_v2 import InceptionResNetV2, decode_predictions, preprocess_input
+import pandas as pd
+import matplotlib.pyplot as plt
+from tensorflow.keras.models import load_model
+
 
 # Create your models here.
 STATE_CHOICE=((
@@ -54,23 +58,26 @@ class Patientdb(models.Model):
         print(self.pimage.path)
         print("try starts")
         try:
-            img = load_img(self.pimage.path, target_size=(299,299))
-            img_array = img_to_array(img) #convert image to array of pixels and assigned some value to every pixels
-            # print(img_array)
-            # print((img_array).shape) # find the shape of image
-            to_pred = np.expand_dims(img_array, axis=0) #(1,299,299,3)
-            # print(to_pred.shape)
+            #img = load_img(self.pimage.path, target_size=(299,299))
+             # get the absolute path of the file
+            model_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'resnet50.h5')
 
-            prep = preprocess_input(to_pred)
-            
-            model = InceptionResNetV2(weights = 'imagenet')
-            prediction = model.predict(prep)
-            print(prediction)
-            
-            #decode
-            decoded = decode_predictions(prediction)[0][0][1]
-            print("hello")
-            self.classified = str(decoded)
+            # load the model using the absolute path
+            model = load_model(model_path)
+
+            # Initialising Class Labels
+            class_names=['Bengin case','Malignant case','Normal case']
+            #print(class_names)
+
+            #Reading test image
+            img_array=load_img(self.picture.path, target_size=(512,512))
+
+            #Predicting
+            img_array=np.expand_dims(img_array,axis=0)
+            pred=model.predict(np.array(img_array))
+            output_class=class_names[np.argmax(pred)]
+            print("The Predicted Class is ",output_class)
+            self.classfied = str(output_class)
             print("success")
 
         except Exception as e:

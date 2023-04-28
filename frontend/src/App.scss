@@ -123,6 +123,14 @@ body {
   color:#00acb1 ;
 }
 
+ul li {
+  display: inline-block;
+  padding: 15px;
+  // background: red;
+}
+
+
+
 
 
 
@@ -169,6 +177,7 @@ background: #00acb1;
 .nav-end button a:hover
 {
   color: white;
+  
 }
 // .foot{
 //   /* background-color:#282c34; */

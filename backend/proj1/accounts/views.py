@@ -19,6 +19,7 @@ from rest_framework import permissions
 
 from accounts.serializers import PatientSerializer
 from accounts.models import Patientdb
+from django.contrib.auth import logout
 
 
 
@@ -36,7 +37,12 @@ class LoginAPI(KnoxLoginView):
         else:
             return Response({'error': 'Invalid username or password.'}, status=status.HTTP_400_BAD_REQUEST)
 
+class LogoutAPI(APIView):
+    permission_classes = (permissions.IsAuthenticated,)
 
+    def post(self, request, format=None):
+        logout(request)
+        return Response({'success': 'Logged out successfully.'})
 
 
 

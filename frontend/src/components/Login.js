@@ -81,7 +81,9 @@ const Login = () => {
         console.log(token)
         // localStorage.setItem("auth",response.data)
         // Store token in localStorage or session storage for later use
+        // console.log(response.data.token)
         alert("logged in success")
+        localStorage.setItem("auth",token)
 
         navigate('doctor_profile')
       } else {

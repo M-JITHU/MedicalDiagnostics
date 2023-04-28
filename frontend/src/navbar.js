@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import './App.scss';
-import React,{useState} from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { RiMoonFill, RiSunFill } from "react-icons/ri";
 import {
   IoMdNotificationsOutline,
@@ -9,104 +10,167 @@ import {
 import { FiSearch } from "react-icons/fi";
 import { FiAlignJustify } from "react-icons/fi";
 import {
-	BrowserRouter as Router,
-	Routes,
-	Route,
-	Link
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
 } from 'react-router-dom';
-import Home from './components/Home';
-import About from './components/Contact';
-import Contact from './components/About';
-import App from './App';
-import Login from './components/Login';
-import Signup from './components/Signup';
+
 import logo from './logo.png';
-import Doctor from './components/Doctor';
+import axios from 'axios';
+
+
 
 
 
 function Navbar() {
   const [darkmode, setDarkmode] = useState(false);
+  const auth = localStorage.getItem('auth');
+  const navigate = useNavigate();
+  const [isLoggedOut, setIsLoggedOut] = useState(false);
+
+  const logout = () => {
+    console.log(auth);
+    const token = auth;
+    localStorage.clear();
+    alert("Your logout successfully");
+    navigate("/");
+
+
+  
+    // const authToken = localStorage.getItem('auth'); // get authentication token from local storage
+    // console.log(authToken)
+    // axios.post('http://127.0.0.1:8000/api/logout', null, {
+    //   headers: {
+    //     'Authorization': `Bearer ${authToken}`, // include authentication token in header
+    //     'Content-Type': 'application/json' // set content type to JSON
+    //   }
+    // })
+    // .then(response => {
+    //   alert("logout")
+    //   setIsLoggedOut(true); // set state to indicate successful logout
+    //   // handle successful logout, e.g. redirect the user
+    // })
+    // .catch(error => {
+    //   alert("cannot logout")
+    //   console.log(error); // log any errors to console
+    //   // handle error response or network error
+    // });
+
+
+
+    
+    // axios.post('http://127.0.0.1:8000/api/logout',null,{
+    //   headers: {
+    //     'Authorization': 'Bearer ' + token, // include any required authentication token
+    //     'Content-Type': 'application/json' // set content type to JSON
+    //   }
+    // })
+    //   .then(response => {
+    //     alert("logout successfully")
+    //     console.log("logout done")
+    //   })
+    //   .catch(error => {
+    //     // handle error response or network error
+    //     alert("cannot logout ")
+    //     console.log("logout not done")
+    //   });  
+}
+  
+
   return (
-    <Router>
-      <div class="contain">
-    <nav className='nav-head2  fixed-top'>
-            <ul>
-              <li><img src={logo} width='200px'></img></li>
-             <li></li>
-             <li>
-            
-        </li>
-            </ul>
-            <div className='nav-end'>
+
+
+    <div class="contain">
+      <nav className='nav-head2  fixed-top'>
+        <ul>
+          <li><img src={logo} width='200px'></img></li>
+          <li></li>
+          <li>
+
+          </li>
+        </ul>
+        <div className='nav-end'>
           <div class="nav-section nav-des-section">
-          {/* <div class="nav-des-sub">DEPARTMENT OF UNDERGRADUATE COURSES</div>
+            {/* <div class="nav-des-sub">DEPARTMENT OF UNDERGRADUATE COURSES</div>
           <div class="nav-des-sub"></div>  */}
-          <div class="op-end">
-          <div class="me-4"><FiSearch class="me-1"/>
-             <input
-            type="text"
-            placeholder="Search.."
-            /></div>
-          <div class="me-4"
-          onClick={() => {
-            if (darkmode) {
-              document.body.classList.remove("dark");
-              setDarkmode(false);
-            } else {
-              document.body.classList.add("dark");
-              setDarkmode(true);
-            }
-          }}
-        >
-          {darkmode ? (
-            <RiSunFill className="text-light" />
-          ) : (
-            <RiMoonFill className=" dark:text-white" />
-          )}
-        </div>
-          <Link to="login"><button type="button" class="nav-op btn me-4 justify-content-md-end">Login</button></Link>
-          <Link to="register"> <button type="button" class="nav-op btn">Sign-Up</button></Link>
+            <div class="op-end">
+              <div class="me-4"><FiSearch class="me-1" />
+                <input
+                  type="text"
+                  placeholder="Search.."
+                /></div>
+              <div class="me-4"
+                onClick={() => {
+                  if (darkmode) {
+                    document.body.classList.remove("dark");
+                    setDarkmode(false);
+                  } else {
+                    document.body.classList.add("dark");
+                    setDarkmode(true);
+                  }
+                }}
+              >
+                {darkmode ? (
+                  <RiSunFill className="text-light" />
+                ) : (
+                  <RiMoonFill className=" dark:text-white" />
+                )}
+              </div>
+
+              {
+                auth ? <>
+
+
+                  <Link to="/"> <button type="button" class="nav-op btn" onClick={logout}>Logout</button></Link>
+                </> : <>
+
+                  <Link to="login"><button type="button" class="nav-op btn me-4 justify-content-md-end">Login</button></Link>
+                  <Link to="register"> <button type="button" class="nav-op btn">Sign-Up</button></Link>
+                </>
+              }
+            </div>
           </div>
-      </div>
-       </div>
-        
-    </nav>
-    <header class="nav-head">
-      <ul>
-      <li>
+        </div>
+
+      </nav>
+      <header class="nav-head">
+        <ul>
+          {
+            auth ? <>
+              {/* <li>
+                  <Link to="contact">Doctors</Link>
+                </li>
+                <li>
+                  <Link to="about">Patients</Link>
+                </li> */}
+              <ul>
+                <li>
+                  <Link to="contact" >Doctors</Link>
+                </li>
+                <li>
+                  <Link to="about">Patients</Link>
+                </li>
+              </ul>
+
+            </> : <>
+              <li>
                 <Link to="/">Home</Link>
               </li>
-              <li>
-                <Link to="contact">Doctors</Link>
-              </li>
-              <li>
-                <Link to="about">Patients</Link>
-              </li>
-        <li> <Link to="contact">Services</Link></li>
-        <li> <Link to="contact">About us</Link></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-      </ul>
 
-    </header>
-    {/* <About/> */}
-  <div class="">
-     <Routes>
-           <Route exact path='/' element={< Home />}></Route>
-           <Route exact path='about' element={< About />}></Route>
-           <Route exact path='contact' element={< Contact />}></Route>
-           <Route exact path='login' element={<Login/>}></Route>
-           <Route exact path='register' element={<Signup/>}></Route>
-           <Route exact path='doctor_profile' element={<Doctor/>}></Route>
+              <li> <Link to="contact">Services</Link></li>
+              <li> <Link to="contact">About us</Link></li>
+            </>
+          }
+        </ul>
 
-    </Routes>
+      </header>
+      {/* <About/> */}
+
     </div>
-    </div>
- </Router>
+
   );
 }
+
 
 export default Navbar;

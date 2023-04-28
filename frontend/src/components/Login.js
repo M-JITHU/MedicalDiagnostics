@@ -84,8 +84,9 @@ const Login = () => {
         // console.log(response.data.token)
         alert("logged in success")
         localStorage.setItem("auth",token)
+        navigate('/doctor_profile')
 
-        navigate('doctor_profile')
+        // navigate('doctor_profile')
       } else {
         alert("error in logged", response.status)
       }

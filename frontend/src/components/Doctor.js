@@ -6,7 +6,52 @@ const doctor = () => {
 
 
     <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
+    <h2>Hello doctor</h2>
 
+    <h2>Hello doctor</h2>
     </>
   )
 }

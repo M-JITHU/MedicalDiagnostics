@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.scss';
 // import './custom.scss';
 import App from './App';
-import Navbar from './navbar';
+import Navbar from './Navbar';
 import Footer from './footer';
 // import 'bootstrap/dist/css/bootstrap.css';
 

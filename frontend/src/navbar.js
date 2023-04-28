@@ -18,6 +18,7 @@ import {
 
 import logo from './logo.png';
 import axios from 'axios';
+import Signup from './components/Signup';
 
 
 
@@ -29,12 +30,22 @@ function Navbar() {
   const navigate = useNavigate();
   const [isLoggedOut, setIsLoggedOut] = useState(false);
 
+
+
+  const signup = ()=>{
+    // navigate('register')
+  }
+
+  const login = ()=>{
+    // navigate('/login')
+  }
+
   const logout = () => {
     console.log(auth);
     const token = auth;
     localStorage.clear();
     alert("Your logout successfully");
-    navigate("/");
+    // navigate("/");
 
 
   
@@ -77,9 +88,7 @@ function Navbar() {
     //   });  
 }
   
-
   return (
-
 
     <div class="contain">
       <nav className='nav-head2  fixed-top'>
@@ -125,8 +134,8 @@ function Navbar() {
                   <Link to="/"> <button type="button" class="nav-op btn" onClick={logout}>Logout</button></Link>
                 </> : <>
 
-                  <Link to="login"><button type="button" class="nav-op btn me-4 justify-content-md-end">Login</button></Link>
-                  <Link to="register"> <button type="button" class="nav-op btn">Sign-Up</button></Link>
+                  <Link to="login"><button type="button" class="nav-op btn me-4 justify-content-md-end" onClick={login}>Login</button></Link>
+                  <Link to="register"> <button type="button" class="nav-op btn" onClick={signup}>Sign-Up</button></Link>
                 </>
               }
             </div>

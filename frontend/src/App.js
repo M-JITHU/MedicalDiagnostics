@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 
 import './App.scss';
-import Navbar from './navbar';
+import Navbar from './Navbar';
 import Sidebar from './sidebar';
 import Footer from './footer';
 import React from 'react';
@@ -39,7 +39,7 @@ return (
             <Route exact path='contact' element={< Contact />}></Route>
             <Route exact path='login' element={<Login />}></Route>
             <Route exact path='register' element={<Signup />}></Route>
-            <Route exact path='doctor_profile' element={<Doctor />}></Route>
+            <Route exact path='/doctor_profile' element={<Doctor />}></Route>
 
           </Routes>
      </Router>

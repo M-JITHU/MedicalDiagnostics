@@ -155,10 +155,10 @@ function Navbar() {
                 </li> */}
               <ul>
                 <li>
-                  <Link to="contact" >Doctors</Link>
+                  <Link to="doctor_profile" >Doctors</Link>
                 </li>
                 <li>
-                  <Link to="about">Patients</Link>
+                  <Link to="patient_form">Patients</Link>
                 </li>
               </ul>
 

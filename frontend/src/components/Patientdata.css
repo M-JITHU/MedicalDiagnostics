@@ -20,3 +20,11 @@ tbody tr:nth-child(even) {
 tbody tr:nth-child(odd) {
   background-color: #fff; /* white */
 }
+td a{
+    text-decoration: none;
+}
+
+td a:hover{
+    text-decoration: underline;
+}
+

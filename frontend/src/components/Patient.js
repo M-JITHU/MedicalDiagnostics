@@ -4,6 +4,7 @@ import './component.scss';
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import './Patientdata.css'
 const Patient = () => {
 
 
@@ -83,9 +84,9 @@ const Patient = () => {
         console.log("data is ",response.data);
         navigate('/patientdata')
       }else 
-      { 
+      {
         alert("file not found", +response.status);
-      }
+      } 
 
        
     } catch (error) {

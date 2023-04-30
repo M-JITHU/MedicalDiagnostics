@@ -44,6 +44,7 @@ const Patientdata = () => {
           <th style={{ backgroundColor: '#f2f2f2' }}>Gender</th>
           <th style={{ backgroundColor: '#f2f2f2' }}>Location</th>
           <th style={{ backgroundColor: '#f2f2f2' }}>Image</th>
+          <th style={{ backgroundColor: '#f2f2f2' }}>Classified</th>
         </tr>
       </thead>
       <tbody>
@@ -56,7 +57,7 @@ const Patientdata = () => {
             <td style={{ borderBottom: '1px solid #ddd', padding: '8px' }}>{patient.state}</td>
             <td style={{ borderBottom: '1px solid #ddd', padding: '8px' }}>{patient.gender}</td>
             <td style={{ borderBottom: '1px solid #ddd', padding: '8px' }}>{patient.location}</td>
-            <td style={{ borderBottom: '1px solid #ddd', padding: '8px' }}><a href={`http://127.0.0.1:8000/${patient.pimage}`}> {patient.pimage}</a></td>
+            <td style={{ borderBottom: '1px solid #ddd', padding: '8px' }}><a href={`http://127.0.0.1:8000/${patient.pimage}`}> View </a></td>
             <td style={{ borderBottom: '1px solid #ddd', padding: '8px' }}>{patient.classified}</td>
           </tr>
         )}

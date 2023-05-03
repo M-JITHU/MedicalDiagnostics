@@ -3,55 +3,7 @@ import React from 'react'
 const doctor = () => {
   return (
     <>
-
-
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-    <h2>Hello doctor</h2>
-
-    <h2>Hello doctor</h2>
+    <h1>Doctor profile information</h1>
     </>
   )
 }

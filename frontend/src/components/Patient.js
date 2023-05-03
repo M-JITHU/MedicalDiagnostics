@@ -199,7 +199,7 @@ const Patient = () => {
                   </div>
                   <div class="col-md-9 pe-5">
 
-                    <textarea class="form-control" rows="3" placeholder="Message sent to the employer" name="location" value={patientdata.location}  onChange={setVal}></textarea>
+                    <textarea class="form-control" rows="3" placeholder="Address" name="location" value={patientdata.location}  onChange={setVal}></textarea>
 
                   </div>
                 </div>

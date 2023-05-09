@@ -15,6 +15,8 @@ const Login = () => {
     password: "",
   })
 
+  const [userName, setuserName] = useState('');
+
   // const [username,setU] = useState()
   // const [password,setP] = useState()
 
@@ -76,6 +78,8 @@ const Login = () => {
       const response = await axios.post('http://127.0.0.1:8000/api/login/',{ username, password });
       if (response.status === 200) {
         // Login successful
+        console.log("---------------------------")
+        console.log(response)
         const token = response.data.token;
         axios.defaults.headers.common['Authorization'] = `Token ${token}`;
         console.log(token)
@@ -84,6 +88,12 @@ const Login = () => {
         // console.log(response.data.token)
         alert("logged in success")
         localStorage.setItem("auth",token)
+        // const uname= username;
+        // console.log(uname)
+        // setuserName(uname);
+        console.log("userName", username)
+
+        localStorage.setItem("username", username)
         navigate('/doctor_profile')
 
         // navigate('doctor_profile')

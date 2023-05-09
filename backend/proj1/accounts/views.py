@@ -21,6 +21,9 @@ from accounts.serializers import PatientSerializer
 from accounts.models import Patientdb
 from django.contrib.auth import logout
 
+from django.http import JsonResponse
+from django.contrib.auth.models import User
+
 
 
 
@@ -34,6 +37,7 @@ class LoginAPI(KnoxLoginView):
         if user is not None:
             login(request, user)
             return super().post(request, format=None)
+            # return super().post(request, id,username,password,)
         else:
             return Response({'error': 'Invalid username or password.'}, status=status.HTTP_400_BAD_REQUEST)
 
@@ -102,28 +106,7 @@ def get_user_data(request):
         
     return Response({'error':'not authenticated'}, status=400)
 
-
-# @api_view(['POST'])
-# def register_api(request):
-#     serializer = RegisterSerializer(data= request.data)
-#     serializer.is_valid(raise_exception=True)
-    
-#     user = serializer.save()
-    
-#     _, token = AuthToken.objects.create(user)
-    
-#     return Response({
-#         'user_info':{
-#             'id':user.id,
-#             'username':user.username,
-#             'email':user.email
-#             },
-#         'token':token
-#     })
-
-# def __str__(self):
-#                 return "Image classfied at {}".format(self.uploaded.strftime('%Y-%m-%d %H:%M'))
-            
+      
 
 class PatientView(APIView):
     def post(self, request, format=None):
@@ -141,3 +124,48 @@ class PatientView(APIView):
         candidates = Patientdb.objects.all()
         serializer = PatientSerializer(candidates, many=True)
         return Response({'status':'success','candidates':serializer.data}, status=status.HTTP_200_OK)
+    
+
+
+
+
+
+
+@api_view(['GET'])
+def get_patient_details(request):
+    name = request.GET.get('name')
+
+    if not name:
+        return Response({'error': 'Please provide a name to search for.'}, status=400)
+    
+    patients = Patientdb.objects.filter(name__icontains=name)
+
+    if not patients:
+        return Response({'error': 'Patient not found.'}, status=404)
+
+    serializer = PatientSerializer(patients, many=True)
+    return Response(serializer.data)
+
+
+
+@api_view(['GET'])
+def getUserDetails(request):
+    username = request.GET.get('username')
+
+    if not username:
+        return JsonResponse({'error': 'Username parameter required.'}, status=400)
+
+    try:
+        user = User.objects.get(username=username)
+    except User.DoesNotExist:
+        return JsonResponse({'error': 'User not found.'}, status=404)
+
+    response = {
+        'id': user.id,
+        'username': user.username,
+        'email': user.email,
+        'first_name': user.first_name,
+        'last_name': user.last_name,
+    }
+
+    return JsonResponse(response)

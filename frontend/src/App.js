@@ -19,6 +19,9 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Doctor from './components/Doctor';
 import Patientdata from './components/Patientdata';
+import Search from './components/Search';
+import Doctor2 from './components/Doctor2';
+import Services from './components/Services';
 
 
 const  App =()=> {
@@ -40,8 +43,10 @@ return (
             <Route exact path='patient_form' element={< Patient />}></Route>
             <Route exact path='login' element={<Login />}></Route>
             <Route exact path='register' element={<Signup />}></Route>
-            <Route exact path='/doctor_profile' element={<Doctor />}></Route>
+            <Route exact path='/doctor_profile' element={<Doctor2 />}></Route>
             <Route exact path='/patientdata' element={<Patientdata />}></Route>
+            <Route exact path='/search' element={<Search />}></Route>
+            <Route exact path='/services' element={<Services/>}></Route>
 
           </Routes>
      </Router>

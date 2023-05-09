@@ -16,7 +16,7 @@ import {
   Link,
 } from 'react-router-dom';
 
-import logo from './logo.png';
+import logo from '../src/images/logo.png';
 import axios from 'axios';
 import Signup from './components/Signup';
 
@@ -93,17 +93,21 @@ function Navbar() {
     <div class="contain">
       <nav className='nav-head2  fixed-top'>
         <ul>
-          <li><img src={logo} width='200px'></img></li>
-          <li></li>
-          <li>
-
-          </li>
+          
+          {/* <li className='icon-logo'><img src={logo} width='200px' style={{marginBottom:"100px", marginTop:"0"}} ></img></li> */}
+          <div className='icon-logo'>
+               <img src={logo} width='200px' style={{marginTop:"0"}} ></img>
+            </div>
+        
         </ul>
         <div className='nav-end'>
           <div class="nav-section nav-des-section">
             {/* <div class="nav-des-sub">DEPARTMENT OF UNDERGRADUATE COURSES</div>
           <div class="nav-des-sub"></div>  */}
+          
             <div class="op-end">
+
+              
               <div class="me-4"><FiSearch class="me-1" />
                 <input
                   type="text"
@@ -160,6 +164,10 @@ function Navbar() {
                 <li>
                   <Link to="patient_form">Patients</Link>
                 </li>
+
+                <li>
+                  <Link to="search">Search</Link>
+                </li>
               </ul>
 
             </> : <>
@@ -167,7 +175,7 @@ function Navbar() {
                 <Link to="/">Home</Link>
               </li>
 
-              <li> <Link to="contact">Services</Link></li>
+              <li> <Link to="services">Services</Link></li>
               <li> <Link to="contact">About us</Link></li>
             </>
           }

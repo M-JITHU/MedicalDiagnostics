@@ -168,6 +168,9 @@ function Navbar() {
                 <li>
                   <Link to="search">Search</Link>
                 </li>
+                <li>
+                  <Link to="patientdata">All Patient data</Link>
+                </li>
               </ul>
 
             </> : <>

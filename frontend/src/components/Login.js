@@ -2,7 +2,7 @@ import React from 'react'
 import './component.scss';
 import { FiSearch,FiFacebook,FiTwitter,FiLinkedin } from "react-icons/fi";
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
 import {FaUserCircle,FaUser} from "react-icons/fa"
 // import {MdEmail,MdDriveFileRenameOutline} from "react-icons/md"
@@ -138,8 +138,9 @@ const Login = () => {
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
         <form>
           <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-            <p class="lead fw-normal mb-0 me-3">Sign in with</p>
-            <button type="button" class="btn btn-primary btn-floating mx-1">
+           
+            <p class="lead fw-normal mb-0 me-3"><b>Sign in</b></p>
+            {/* <button type="button" class="btn btn-primary btn-floating mx-1">
               <FiFacebook/>
             </button>
 
@@ -149,10 +150,10 @@ const Login = () => {
 
             <button type="button" class="btn btn-primary btn-floating mx-1">
              <FiTwitter/>
-            </button>
+            </button> */} 
           </div>
 
-          <div class="divider d-flex align-items-center my-4">
+          <div class="divider d-flex align-items-center my-2">
             <p class="text-center fw-bold mx-3 mb-0"></p>
           </div>
 
@@ -177,21 +178,21 @@ const Login = () => {
 
           <div class="d-flex justify-content-between align-items-center">
           
-            <div class="form-check mb-0">
-              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
-              <label class="form-check-label" for="form2Example3">
+            {/* <div class="form-check mb-0"> */}
+              {/* <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" /> */}
+              {/* <label class="form-check-label" for="form2Example3">
                 Remember me
-              </label>
-            </div>
-            <a href="#!" class="text-body">Forgot password?</a>
+              </label> */}
+            {/* </div> */}
+            {/* <a href="#!" class="text-body">Forgot password?</a> */}
           </div>
 
           <div class="text-center text-lg-start mt-2 pt-2">
              <button class="m-4 btn nav-op" onClick={handleSubmit} id="lobtn"  type='button'>Login</button>
              {/* <input type="button" className="btn btn-primary" onClick={handleSubmit} value="Login" /> */}
             <p class="small fw-bold mt-2 pt-1 mb-0 me-2">Don't have an account?  
-            <a href=""
-                class="link-danger">Register</a></p>
+            <Link to="/register"
+                class="link-danger">Register</Link></p>
           </div>
 
         </form>

@@ -102,15 +102,13 @@ body {
   display: flex;
   flex-direction:row;
   // align-items: flex-start;
-  justify-content:space-between;
+  // justify-content:space-between;
   text-decoration: none;
   list-style: none;
   // margin-top: 18px;
- 
-  
 }
 .nav-head ul li:hover{
- 
+  text-decoration:underline #00acb1;
   opacity: 0.5;
 }
 .nav-head ul li a:hover

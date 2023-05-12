@@ -29,7 +29,7 @@ const Home =()=>
          <div class="container" >
           <div class="carousel-caption text-start text-primary">
             <h1>LUNG CANCER DETECTION</h1>
-            <p>welcome to kle Technological University</p>
+            {/* <p>welcome to kle Technological University</p> */}
             {/* <p><a id="card"  class="btn" href="#" onClick={notify}>Login</a></p> */}
           </div>
         </div>
@@ -83,7 +83,7 @@ const Home =()=>
         We at MediCare are focused on helping you. After receiving successful care for various aches and pains over the years,
          Dr. Woshiack found her calling to help others get well.</p>
          <div class="container1">
-    <div class="row1">
+    {/* <div class="row1">
       <div class="dugc-mem">
         <a href="/lab" role="button" class="nav-op btn  btn-block text-center">
           <span><i class="fa fa-users"></i></span>
@@ -93,13 +93,13 @@ const Home =()=>
         <a href="/upload" role="button" class="nav-op btn  btn-block text-center">
           <span><i class="fa fa-user"></i></span>
           <br/>Consult Doctor</a>
-      </div>
-      <div class="dugc-mem">
+      </div> */}
+      {/* <div class="dugc-mem">
         <a href="/friends" role="button" class="nav-op btn  btn-block text-center">
        <span><i class="fa fa-user"></i></span>
        <br/>view Patient</a>
-      </div>
-    </div>
+      </div> */}
+    {/* </div> */}
   </div>
          </div>
     <div class="btImage">

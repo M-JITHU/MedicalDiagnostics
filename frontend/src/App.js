@@ -22,6 +22,7 @@ import Patientdata from './components/Patientdata';
 import Search from './components/Search';
 import Doctor2 from './components/Doctor2';
 import Services from './components/Services';
+import Editpatient from './components/Editpatient';
 
 
 const  App =()=> {
@@ -47,6 +48,7 @@ return (
             <Route exact path='/patientdata' element={<Patientdata />}></Route>
             <Route exact path='/search' element={<Search />}></Route>
             <Route exact path='/services' element={<Services/>}></Route>
+            <Route exact path='/editpatient/:id' element={<Editpatient/>}></Route>
 
           </Routes>
      </Router>

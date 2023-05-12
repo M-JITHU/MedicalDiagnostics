@@ -6,6 +6,7 @@ import './Doctor.css'
 import { useState } from 'react';
 import { useEffect } from 'react';
 import axios from 'axios';
+import doctor from './doctor456.jpg';
 const Doctor2 = () => {
     const [userData, setUserData] = useState('');
     const name = localStorage.getItem('username');
@@ -29,7 +30,7 @@ const Doctor2 = () => {
         <>
         <div className='main-profile'>
             <CCard style={{ width: '18rem' }}>
-        <CCardImage orientation="top" src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"/>
+        <CCardImage orientation="top" src={doctor}/>
         <CCardBody>
             <center>
           <CCardTitle>Doctor details</CCardTitle></center>

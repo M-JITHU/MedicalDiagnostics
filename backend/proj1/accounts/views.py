@@ -130,7 +130,7 @@ class PatientView(APIView):
 
 
 
-
+# Patient details 
 @api_view(['GET'])
 def get_patient_details(request):
     name = request.GET.get('name')
@@ -148,6 +148,8 @@ def get_patient_details(request):
 
 
 
+
+# Login details 
 @api_view(['GET'])
 def getUserDetails(request):
     username = request.GET.get('username')
@@ -169,3 +171,21 @@ def getUserDetails(request):
     }
 
     return JsonResponse(response)
+
+
+
+
+@api_view(['GET'])
+def edit_patient_details(request):
+    id = request.GET.get('id')
+
+    if not id:
+        return Response({'error': 'Please provide a name to search for.'}, status=400)
+    
+    patients = Patientdb.objects.filter(id=id)
+
+    if not patients:
+        return Response({'error': 'Patient not found.'}, status=404)
+
+    serializer = PatientSerializer(patients, many=True)
+    return Response(serializer.data)

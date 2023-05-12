@@ -34,8 +34,6 @@ const Patient = () => {
     
   }
 
-
-
   const setImage = (event) => {
     setPatient(prev=> ({
       ...prev,

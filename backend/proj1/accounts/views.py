@@ -12,15 +12,11 @@ from .serializers import RegistrationSerializer
 from rest_framework import generics
 from rest_framework.permissions import AllowAny
 from django.contrib.auth import authenticate, login
-# from django.http import JsonResponse
-
 from knox.views import LoginView as KnoxLoginView
 from rest_framework import permissions
-
 from accounts.serializers import PatientSerializer
 from accounts.models import Patientdb
 from django.contrib.auth import logout
-
 from django.http import JsonResponse
 from django.contrib.auth.models import User
 
@@ -37,7 +33,6 @@ class LoginAPI(KnoxLoginView):
         if user is not None:
             login(request, user)
             return super().post(request, format=None)
-            # return super().post(request, id,username,password,)
         else:
             return Response({'error': 'Invalid username or password.'}, status=status.HTTP_400_BAD_REQUEST)
 
@@ -69,28 +64,6 @@ class RegistrationView(APIView):
 
 
 
-
-
-
-# @api_view(['POST'])
-# def login_api(request):
-#     serializer = AuthTokenSerializer(data=request.data)
-#     serializer.is_valid(raise_exception=True)
-#     user=serializer.validated_data['user']
-    
-
-#     _, token  = AuthToken.objects.create(user)
-#     return Response({
-#         'user_info':{
-#             'id':user.id,
-#             'username':user.username,
-#             'email':user.email
-#             },
-#         'token':token
-#     })
-    
-    
-    
 @api_view(['GET'])
 def get_user_data(request):
     user = request.user
@@ -105,8 +78,6 @@ def get_user_data(request):
         })
         
     return Response({'error':'not authenticated'}, status=400)
-
-      
 
 class PatientView(APIView):
     def post(self, request, format=None):

@@ -30,12 +30,6 @@ const  App =()=> {
 return (
   
      <>
-      {/* <div class="grid-container1">
-     <div class="Item1"><Sidebar/></div>
-     <div class="Item2"><Navbar/></div>
-     <div class="Item3"><Footer /></div>
-     </div>  */}
-
      <Router>
      <div class="mb-4"><Navbar/></div>
      <Routes>

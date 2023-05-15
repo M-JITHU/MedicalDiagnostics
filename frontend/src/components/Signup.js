@@ -18,14 +18,9 @@ const Signup =()=>{
     password2: ""
   })
   const navigate = useNavigate();
-
   const setVal = (event) => {
-    // const {name,value} = e.target;
     const name = event.target.name;
     const value = event.target.value;
-    // event.preventDefault();
-
-    // setdata({...data,[name]:value})
     setdata((prev) => {
       return { ...prev, [name]: value }
     })
@@ -50,7 +45,7 @@ const Signup =()=>{
       .then((res)=>{
           console.log("register successfully",res)
           alert("Your Sign Up is successfull")
-          navigate('login')
+          navigate('/login')
       })
       .catch((error)=>{
           console.log("Already registered",error)
@@ -125,26 +120,14 @@ const Signup =()=>{
                           <input type="password" id="form3Example4cd" class="form-control" name="password2" value={Values.password2} onChange={setVal} />
                         </div>
                       </div>
-
-                      {/* <div class="form-check d-flex justify-content-center mb-5">
-                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
-                    <label class="form-check-label" for="form2Example3">
-                      I agree all statements in <a href="#!">Terms of service</a>
-                    </label>
-                  </div> */}
-
                       <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                         <button class="btn btn-primary" onClick={handleSubmit} id="lobtn" type='button'>Sign Up</button>
                       </div>
-
                     </form>
-
                   </div>
                   <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-
                     <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
                       class="img-fluid" alt="Sample image" />
-
                   </div>
                 </div>
               </div>

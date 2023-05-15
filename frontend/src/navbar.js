@@ -45,47 +45,7 @@ function Navbar() {
     const token = auth;
     localStorage.clear();
     alert("Your logout successfully");
-    // navigate("/");
-
-
-  
-    // const authToken = localStorage.getItem('auth'); // get authentication token from local storage
-    // console.log(authToken)
-    // axios.post('http://127.0.0.1:8000/api/logout', null, {
-    //   headers: {
-    //     'Authorization': `Bearer ${authToken}`, // include authentication token in header
-    //     'Content-Type': 'application/json' // set content type to JSON
-    //   }
-    // })
-    // .then(response => {
-    //   alert("logout")
-    //   setIsLoggedOut(true); // set state to indicate successful logout
-    //   // handle successful logout, e.g. redirect the user
-    // })
-    // .catch(error => {
-    //   alert("cannot logout")
-    //   console.log(error); // log any errors to console
-    //   // handle error response or network error
-    // });
-
-
-
-    
-    // axios.post('http://127.0.0.1:8000/api/logout',null,{
-    //   headers: {
-    //     'Authorization': 'Bearer ' + token, // include any required authentication token
-    //     'Content-Type': 'application/json' // set content type to JSON
-    //   }
-    // })
-    //   .then(response => {
-    //     alert("logout successfully")
-    //     console.log("logout done")
-    //   })
-    //   .catch(error => {
-    //     // handle error response or network error
-    //     alert("cannot logout ")
-    //     console.log("logout not done")
-    //   });  
+    // navigate("/");  
 }
   
   return (
@@ -94,7 +54,6 @@ function Navbar() {
       <nav className='nav-head2  fixed-top'>
         <ul>
           
-          {/* <li className='icon-logo'><img src={logo} width='200px' style={{marginBottom:"100px", marginTop:"0"}} ></img></li> */}
           <div className='icon-logo'>
                <img src={logo} width='200px' style={{marginTop:"0"}} ></img>
             </div>
@@ -102,8 +61,6 @@ function Navbar() {
         </ul>
         <div className='nav-end'>
           <div class="nav-section nav-des-section">
-            {/* <div class="nav-des-sub">DEPARTMENT OF UNDERGRADUATE COURSES</div>
-          <div class="nav-des-sub"></div>  */}
           
             <div class="op-end">
 
@@ -138,8 +95,8 @@ function Navbar() {
                   <Link to="/"> <button type="button" class="nav-op btn" onClick={logout}>Logout</button></Link>
                 </> : <>
 
-                  <Link to="login"><button type="button" class="nav-op btn me-4 justify-content-md-end" onClick={login}>Login</button></Link>
-                  <Link to="register"> <button type="button" class="nav-op btn" onClick={signup}>Sign-Up</button></Link>
+                  <Link to="login"><button type="button" class="nav-op btn me-4 justify-content-md-end">Login</button></Link>
+                  <Link to="register"> <button type="button" class="nav-op btn">Sign-Up</button></Link>
                 </>
               }
             </div>
@@ -151,12 +108,6 @@ function Navbar() {
         <ul>
           {
             auth ? <>
-              {/* <li>
-                  <Link to="contact">Doctors</Link>
-                </li>
-                <li>
-                  <Link to="about">Patients</Link>
-                </li> */}
               <ul>
                 <li>
                   <Link to="doctor_profile" >Doctors</Link>

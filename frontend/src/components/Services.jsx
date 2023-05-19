@@ -16,8 +16,8 @@ const Services = () => {
     <br />
     <br />
     <p>1. <b>Early detection of lung cancer:</b> The web application can be used to screen patients for early detection of lung cancer. The Lung cancer classification ML model can analyze lung nodule images and patient data to provide accurate predictions.</p>
-    <p>2. <b>Diagnosis of lung cancer:</b> The web application can be used to diagnose lung cancer in patients. The Lung cancer classification ML model can analyze lung nodule images and patient data to provide accurate diagnoses.</p>
-    <p>3. <b>Monitoring of lung cancer:</b>The web application can be used to monitor patients with lung cancer. The Lung cancer classification ML model can analyze lung nodule images and patient data to track the progress of the disease and provide accurate predictions on the effectiveness of treatment.</p>
+    <p>2. <b>Diagnosis of lung cancer:</b> The web application can be used to help the doctors to diagnose lung cancer in patients. The Lung cancer classification ML model can analyze lung nodule images and patient data to provide accurate diagnoses.</p>
+    {/* <p>3. <b>Monitoring of lung cancer:</b>The web application can be used to monitor patients with lung cancer. The Lung cancer classification ML model can analyze lung nodule images and patient data to track the progress of the disease and provide accurate predictions on the effectiveness of treatment.</p> */}
     <br />
     <p>Overall, Our Lung cancer classification ML model and web application can provide valuable services for early detection, diagnosis, and monitoring of lung cancer,</p>
     </div>

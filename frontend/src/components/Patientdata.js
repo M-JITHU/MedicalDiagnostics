@@ -48,6 +48,7 @@ const Patientdata = () => {
           <th style={{ backgroundColor: '#f2f2f2' }}>ID</th>
           <th style={{ backgroundColor: '#f2f2f2' }}>Name</th>
           <th style={{ backgroundColor: '#f2f2f2' }}>Email</th>
+          <th style={{ backgroundColor: '#f2f2f2' }}>Phone Number</th>
           <th style={{ backgroundColor: '#f2f2f2' }}>DOB</th>
           <th style={{ backgroundColor: '#f2f2f2' }}>State</th>
           <th style={{ backgroundColor: '#f2f2f2' }}>Gender</th>
@@ -64,6 +65,7 @@ const Patientdata = () => {
             <td style={{ borderBottom: '1px solid #ddd', padding: '8px' }}>{patient.id}</td>
             <td style={{ borderBottom: '1px solid #ddd', padding: '8px' }}>{patient.name}</td>
             <td style={{ borderBottom: '1px solid #ddd', padding: '8px' }}>{patient.email}</td>
+            <td style={{ borderBottom: '1px solid #ddd', padding: '8px' }}>{patient.phone_number}</td>
             <td style={{ borderBottom: '1px solid #ddd', padding: '8px' }}>{patient.dob}</td>
             <td style={{ borderBottom: '1px solid #ddd', padding: '8px' }}>{patient.state}</td>
             <td style={{ borderBottom: '1px solid #ddd', padding: '8px' }}>{patient.gender}</td>

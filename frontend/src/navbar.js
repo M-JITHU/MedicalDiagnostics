@@ -130,7 +130,7 @@ function Navbar() {
               </li>
 
               <li> <Link to="services">Services</Link></li>
-              <li> <Link to="contact">About us</Link></li>
+              {/* <li> <Link to="contact">About us</Link></li> */}
             </>
           }
         </ul>

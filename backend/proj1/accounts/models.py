@@ -26,6 +26,7 @@ class Patientdb(models.Model):
     pimage = models.ImageField()
     classified = models.CharField(max_length=200,blank=True)
     uploaded = models.DateTimeField(auto_now_add=True) 
+    phone_number = models.CharField(max_length=100)
     
     def save(self,*args,**kwargs): # code pre trained model and  the whole classification take place
         print(self.pimage.path)

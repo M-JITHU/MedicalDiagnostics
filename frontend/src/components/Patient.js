@@ -15,6 +15,7 @@ const Patient = () => {
       email:"",
       dob:"",
       state:"",
+      phone_number: "",
       gender:"",
       location:"",
       pimage:null,
@@ -53,6 +54,7 @@ const Patient = () => {
   patientformdata.append('dob', patientdata.dob);
   patientformdata.append('state', patientdata.state);
   patientformdata.append('gender', patientdata.gender);
+  patientformdata.append('phone_number', patientdata.phone_number);
   patientformdata.append('location', patientdata.location);
   patientformdata.append('pimage', patientdata.pimage); 
 
@@ -66,6 +68,7 @@ const Patient = () => {
       name: patientdata.name,
       email: patientdata.email,
       dob: patientdata.dob,
+      phone_number: patientdata.phone_number,
       state: patientdata.state,
       gender: patientdata.gender,
       location: patientdata.location,
@@ -136,6 +139,7 @@ const Patient = () => {
 
                 <hr class="mx-n3" />
                 <div class="row align-items-center pt-4 pb-3">
+                  
                   <div class="col-md-3 ps-5">
 
                     <h6 class="mb-0">Date of Birth</h6>
@@ -146,6 +150,8 @@ const Patient = () => {
                     <input type="date" name="dob" class="form-control" value={patientdata.dob}  onChange={setVal}/>
 
                   </div>
+
+                  
                 </div>
 
 
@@ -164,6 +170,20 @@ const Patient = () => {
                 </div>
 
                 <hr class="mx-n3" />
+
+
+                <div class="row align-items-center pt-4 pb-3">
+                  <div class="col-md-3 ps-5">
+
+                    <h6 class="mb-0">Phone Number</h6>
+
+                  </div>
+                  <div class="col-md-9 pe-5">
+
+                    <input type="text" name="phone_number" className="form-control"  value={patientdata.phone_number}  onChange={setVal}/>
+
+                  </div>
+                </div>
                 <div class="row align-items-center pt-4 pb-3">
                   <div class="col-md-3 ps-5">
 
@@ -189,6 +209,10 @@ const Patient = () => {
 
                 {/* <hr class="mx-n3" /> */}
 
+               
+
+                <hr class="mx-n3" />
+
                 <div class="row align-items-center py-3">
                   <div class="col-md-3 ps-5">
 
@@ -201,8 +225,6 @@ const Patient = () => {
 
                   </div>
                 </div>
-
-                <hr class="mx-n3" />
 
                 <div class="row align-items-center py-3">
                   <div class="col-md-3 ps-5">

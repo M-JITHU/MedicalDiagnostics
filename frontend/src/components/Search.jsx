@@ -72,12 +72,23 @@ const Search = () => {
 
 
       
-  <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+    
+    {
+      patients.length > 0 ? (
+    
+    <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+ 
+  
+      
       <thead>
+        
+         
+        
         <tr>
           <th style={{ backgroundColor: '#f2f2f2' }}>ID</th>
           <th style={{ backgroundColor: '#f2f2f2' }}>Name</th>
           <th style={{ backgroundColor: '#f2f2f2' }}>Email</th>
+          <th style={{ backgroundColor: '#f2f2f2' }}>Phone Number</th>
           <th style={{ backgroundColor: '#f2f2f2' }}>DOB</th>
           <th style={{ backgroundColor: '#f2f2f2' }}>State</th>
           <th style={{ backgroundColor: '#f2f2f2' }}>Gender</th>
@@ -85,13 +96,18 @@ const Search = () => {
           <th style={{ backgroundColor: '#f2f2f2' }}>Image</th>
           <th style={{ backgroundColor: '#f2f2f2' }}>Classified</th>
         </tr>
+       
+      
+        
       </thead>
+    
       <tbody>
       {patients.map(patient =>
           <tr key={patient.id}>
             <td style={{ borderBottom: '1px solid #ddd', padding: '8px' }}>{patient.id}</td>
             <td style={{ borderBottom: '1px solid #ddd', padding: '8px' }}>{patient.name}</td>
             <td style={{ borderBottom: '1px solid #ddd', padding: '8px' }}>{patient.email}</td>
+            <td style={{ borderBottom: '1px solid #ddd', padding: '8px' }}>{patient.phone_number}</td>
             <td style={{ borderBottom: '1px solid #ddd', padding: '8px' }}>{patient.dob}</td>
             <td style={{ borderBottom: '1px solid #ddd', padding: '8px' }}>{patient.state}</td>
             <td style={{ borderBottom: '1px solid #ddd', padding: '8px' }}>{patient.gender}</td>
@@ -101,8 +117,10 @@ const Search = () => {
           </tr>
         )}
         </tbody>
-
         </table>
+       ) : (
+        <h2> </h2>
+      )}
     </>
   )
 }

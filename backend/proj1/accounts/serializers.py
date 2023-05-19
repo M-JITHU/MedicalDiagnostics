@@ -46,7 +46,7 @@ class RegistrationSerializer(serializers.ModelSerializer):
 class PatientSerializer(serializers.ModelSerializer):
     class Meta:
         model = Patientdb
-        fields =  ['id','name','email','dob','state','gender','location','pimage','classified','uploaded']
+        fields =  ['id','name','email','dob','state','gender','location','pimage','classified','uploaded','phone_number']
     
     
 

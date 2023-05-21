@@ -70,7 +70,7 @@ function Navbar() {
                   type="text"
                   placeholder="Search.."
                 /></div>
-              <div class="me-4"
+              {/* <div class="me-4"
                 onClick={() => {
                   if (darkmode) {
                     document.body.classList.remove("dark");
@@ -86,7 +86,7 @@ function Navbar() {
                 ) : (
                   <RiMoonFill className=" dark:text-white" />
                 )}
-              </div>
+              </div> */}
 
               {
                 auth ? <>

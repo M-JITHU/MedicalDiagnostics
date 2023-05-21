@@ -81,7 +81,7 @@ const Patient = () => {
       console.log(response.status)
       console.log(response)
       if (response.status===201) {
-        alert("patient data")
+        alert("Patient details added successfully")
         console.log("data is ",response.data);
         navigate('/patientdata')
       }else 
@@ -101,7 +101,7 @@ const Patient = () => {
   console.log(patientdata)
 
   return (
-    <section class="vh-100 mb-4"  >
+    <section class="vh-90 mb-4">
       <div class="container h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col-xl-9">
@@ -233,18 +233,18 @@ const Patient = () => {
 
                   </div>
                   <div class="col-md-9 pe-5">
-
                     <input class="form-control form-control-lg" id="formFileLg" type="file" name="pimage" onChange={setImage}/>
-                    <div class="small text-muted mt-2 text-primary">upload size should be less than 2mb</div>
-
+                    <div class="small text-muted mt-2 text-primary">Upload size should be less than 2mb</div>
                   </div>
                 </div>
 
                 <hr class="mx-n3" />
 
-                <div class="px-5 py-4 end">
-                  <button type="submit" class="btn nav-op " onClick={predict} >Generate Report</button>
+                <div class="px-5 py-4 center">
+                  <button type="submit" class="btn nav-op " onClick={predict} >Submit</button>
                 </div>
+
+                
 
               </div>
             </div>
